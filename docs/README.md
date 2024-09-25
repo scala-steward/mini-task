@@ -52,7 +52,7 @@ To execute the task graph:
 product.parRun(shards = 1).unsafeRunSync()
 ```
 
-## Conditionl Execution
+## Conditional Execution
 
 Each task takes a `PartialFunction` that determines whether the task should be executed based on the input values.
 If a task is not executed, all downstream tasks that depend on it will also not be executed.
