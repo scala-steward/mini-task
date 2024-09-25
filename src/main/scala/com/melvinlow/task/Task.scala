@@ -179,11 +179,11 @@ object Task {
     override def pure[A](x: A): Task[F, A] = Task(Nil, _ => x.pure[F])
   }
 
-  opaque type PureOps[F[_]] = Boolean
-  object PureOps {
-    inline def apply[F[_]]: PureOps[F] = true
+  opaque type TaskPureOps[F[_]] = Boolean
+  object TaskPureOps {
+    inline def apply[F[_]]: TaskPureOps[F] = true
 
-    extension [F[_]](dummy: PureOps[F]) {
+    extension [F[_]](dummy: TaskPureOps[F]) {
       def apply[O](value: O)(using Applicative[F]): Task[F, O] =
         Task(Nil, _ => value.pure[F])
 
@@ -212,7 +212,7 @@ object Task {
 
   /** Construct a task from pure values.
     */
-  inline def pure[F[_]] = PureOps.apply[F]
+  inline def pure[F[_]] = TaskPureOps.apply[F]
 
   def apply[F[_], O](value: F[O]): Task[F, O] =
     Task(Nil, _ => value)
