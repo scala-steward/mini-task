@@ -118,7 +118,7 @@ Task.pure[IO](intTask)(_ + _)
 //                        ^^^^^
 ```
 
-# Caching
+## Caching
 
 All tasks will only be executed once per run, no matter how many times they are referenced.
 
