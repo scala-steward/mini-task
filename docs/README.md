@@ -128,7 +128,7 @@ val inc = Task(IO {
 
 ```scala mdoc
 // Create a task that calls inc 3 times
-Task((inc, inc, inc))(_.pure[IO]).parRun(shards = 1).unsafeRunSync()
+Task((inc, inc, inc))(_.pure[IO]).run.unsafeRunSync()
 
 // counter is only incremented once
 counter

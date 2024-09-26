@@ -133,7 +133,7 @@ val inc = Task(IO {
 
 ```scala
 // Create a task that calls inc 3 times
-Task((inc, inc, inc))(_.pure[IO]).parRun(shards = 1).unsafeRunSync()
+Task((inc, inc, inc))(_.pure[IO]).run.unsafeRunSync()
 // res5: Option[Tuple3[Int, Int, Int]] = Some(value = (1, 1, 1))
 
 // counter is only incremented once
