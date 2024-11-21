@@ -1,6 +1,6 @@
 val scala3Version     = "3.3.3"
 val CatsVersion       = "2.12.0"
-val CatsEffectVersion = "3.5.5"
+val CatsEffectVersion = "3.5.6"
 val WeaverVersion     = "0.8.4"
 
 ThisBuild / scalaVersion := scala3Version
