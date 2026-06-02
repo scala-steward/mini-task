@@ -1,7 +1,7 @@
 val scala3Version     = "3.3.3"
 val CatsVersion       = "2.12.0"
 val CatsEffectVersion = "3.5.7"
-val WeaverVersion     = "0.8.4"
+val WeaverVersion     = "0.13.0"
 
 ThisBuild / scalaVersion := scala3Version
 
@@ -37,9 +37,9 @@ lazy val root = project
   .settings(
     name := "mini-task",
     libraryDependencies ++= Seq(
-      "org.typelevel"       %% "cats-core"   % CatsVersion,
-      "org.typelevel"       %% "cats-effect" % CatsEffectVersion,
-      "com.disneystreaming" %% "weaver-cats" % WeaverVersion % Test
+      "org.typelevel" %% "cats-core"   % CatsVersion,
+      "org.typelevel" %% "cats-effect" % CatsEffectVersion,
+      "org.typelevel" %% "weaver-cats" % WeaverVersion % Test
     ),
     scalacOptions ++= Seq(
       "-encoding",
